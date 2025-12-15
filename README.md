@@ -1,2 +1,0 @@
-# Portfolio
-Antoni Kuran Portfolio
