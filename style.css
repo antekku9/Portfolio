@@ -1,0 +1,237 @@
+/* Zmienne CSS dla łatwej zmiany kolorów */
+:root {
+    /* Zmiana koloru tła na cieplejszy off-white */
+    --color-primary: #F9F7F5; /* Mleczna Biel jako tło */
+    --color-secondary: #1A1A1A; /* Ciemny Grafit dla tekstu */
+    --color-accent: #C2A055; /* Złota Kawa/Mosiądz */
+    /* Zmiana jasnego szarego na cieplejszy odcień */
+    --color-light-gray: #EFEAE4; /* Lekkie, cieplejsze tło dla sekcji */
+    --font-header: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* ----------------------------------
+   GLOBALNE STYLY I RESET
+   ---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-secondary);
+    /* Użycie nowej mlecznej bieli */
+    background-color: var(--color-primary); 
+    line-height: 1.6;
+}
+
+/* ... (Pozostałe style bez zmian) ... */
+
+/* ----------------------------------
+   NAGŁÓWEK I NAWIGACJA
+   ---------------------------------- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 5%;
+    /* Tło nagłówka również na mleczną biel */
+    background-color: var(--color-primary);
+    border-bottom: 1px solid var(--color-light-gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ... (Pozostałe style nawigacji bez zmian) ... */
+
+/* ----------------------------------
+   PODSUMOWANIE USŁUG
+   ---------------------------------- */
+.services-summary {
+    /* Tło sekcji podsumowania na nowy, ciepły odcień szarości */
+    background-color: var(--color-light-gray);
+    text-align: center;
+}
+
+.service-item {
+    flex: 1;
+    padding: 1.5em;
+    /* Karty usług wracają na czystą mleczną biel, dla kontrastu */
+    background-color: var(--color-primary);
+    border-top: 4px solid var(--color-accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ----------------------------------
+   SEKCJA HERO (PIERWSZY EKRAN)
+   ---------------------------------- */
+.hero-section {
+    height: 80vh; /* Wysokość dopasowana do ekranu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('placeholder-hero.jpg') center/cover no-repeat; /* Zmień na własne zdjęcie/wideo */
+    color: var(--color-primary); /* Biały tekst na tle, jeśli będzie zdjęcie */
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Lekkie przyciemnienie tła */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    padding: 2em;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
+    color: var(--color-primary);
+}
+
+.hero-content h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 1.5em;
+    color: var(--color-primary);
+}
+
+/* ----------------------------------
+   PRZYCISK CTA (Call to Action)
+   ---------------------------------- */
+.cta-button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: var(--color-accent);
+    color: var(--color-primary) !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-accent);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--color-accent) !important;
+}
+
+/* ----------------------------------
+   PODSUMOWANIE USŁUG
+   ---------------------------------- */
+.services-summary {
+    background-color: var(--color-light-gray);
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.service-item {
+    flex: 1;
+    padding: 1.5em;
+    background-color: var(--color-primary);
+    border-top: 4px solid var(--color-accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.service-item h3 {
+    color: var(--color-accent);
+}
+
+.link-to-portfolio {
+    display: inline-block;
+    margin-top: 1em;
+    font-weight: 700;
+    border-bottom: 1px dotted var(--color-secondary);
+}
+
+/* ----------------------------------
+   O NAS
+   ---------------------------------- */
+.about-us-home {
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 3em;
+}
+
+.team-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 2em;
+}
+
+.profile-card {
+    flex-basis: 40%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-light-gray);
+    border-radius: 50%;
+    margin: 0 auto 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    border: 3px solid var(--color-accent);
+}
+
+/* ----------------------------------
+   SEKCJA CTA (Stopka)
+   ---------------------------------- */
+.call-to-action {
+    text-align: center;
+    padding: 4em 5%;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.call-to-action h3, .call-to-action p {
+    color: var(--color-primary);
+}
+
+.secondary-cta {
+    background-color: var(--color-secondary);
+    color: var(--color-accent) !important;
+    border-color: var(--color-accent);
+}
+
+.secondary-cta:hover {
+    background-color: var(--color-accent);
+    color: var(--color-secondary) !important;
+}
+
+
+/* ----------------------------------
+   STOPKA
+   ---------------------------------- */
+footer {
+    text-align: center;
+    padding: 1.5em 5%;
+    font-size: 0.8em;
+    color: #666;
+    border-top: 1px solid var(--color-light-gray);
+}
